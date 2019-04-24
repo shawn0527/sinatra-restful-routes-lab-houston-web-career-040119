@@ -1,4 +1,3 @@
-require 'pry'
 class ApplicationController < Sinatra::Base
   configure do
     set :public_folder, 'public'
@@ -19,7 +18,6 @@ class ApplicationController < Sinatra::Base
   post '/recipes' do
     recipe = Recipe.create(params)
     redirect "/recipes/#{recipe.id}"
-    binding.pry
   end
 
   get '/recipes/:id' do |id|
